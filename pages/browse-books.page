@@ -467,13 +467,10 @@ input[type='checkbox'] {
                     <a class="" href="https://hopeinabox.org/take-action" target="_blank" rel="noopener noreferrer">Click here</a> for lesson plans
                 </div>
                 <div class="m-text">
-                Hope in a Box provides educators with curated boxes of books with LGBTQ+ characters, distinctive curricula for these books, and training and mentorship on how to build an inclusive classroom. Educators can apply to join the program and access our full curriculum library by clicking the link above. For a sample curriculum guide for Fun Home by Alison Bechdel, please click <a href="http://www.hopeinabox.org/funhome">here</a>.
+                Hope in a Box equips K-12 educators with LGBTQ-inclusive curricula, training, and mentorship. Together, we use literature to cultivate empathy and ensure every LGBTQ student feels safe, welcome, and included at school. Educators can apply to join the program and access our full curriculum library by clicking the link above. Please <a class="" href="https://drive.google.com/file/d/1CGNsYXOAAxJ7oGnzpIZrRGPJnqwxcAgX/view?usp=sharing">click here</a> for a sample curriculum guide for Giovanni's Room by James Baldwin.
                 </div>
                 <div class="m-header title-font">
-                    <a class="" href="https://www.strandbooks.com/" target="_blank" rel="noopener noreferrer">Click here</a> to buy the book
-                </div>
-                <div class="m-text">
-                Hope in a Box supports LGBTQ-friendly independent bookstores. Follow the link above to purchase this book from the Strand Book Store.
+                    <a class="" href="https://bookshop.org/" target="_blank" rel="noopener noreferrer">Click here</a> to buy the book
                 </div>
             </div>
         </div>
@@ -482,7 +479,7 @@ input[type='checkbox'] {
 
 <div class="preamble">
     <div class="preamble-title title-font">
-        One hundred LGBTQ-inclusive books for all ages
+        Hundreds of LGBTQ-inclusive books for all ages
     </div>
     <div class="preamble-subtitle">
     We worked with dozens of teachers, professors, and students to curate a list of our favorite LGBTQ-inclusive books. This list includes a diverse array of stories, formats, time periods, identities, and reading levels.
