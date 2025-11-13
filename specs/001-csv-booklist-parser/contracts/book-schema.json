@@ -1,0 +1,192 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Book Object Schema",
+  "description": "Schema for book objects in booklist-data.js matching inflate-booklist.js expectations",
+  "type": "object",
+  "required": ["Title", "Author", "RowNumber"],
+  "properties": {
+    "Title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Book title"
+    },
+    "Author": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Author name(s)"
+    },
+    "RowNumber": {
+      "type": "number",
+      "minimum": 1,
+      "description": "Sequential row identifier"
+    },
+    "Early elementary": {
+      "type": "string",
+      "enum": ["", "1"],
+      "description": "Reading level category"
+    },
+    "Late elementary": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Middle school": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Early high school": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Late high school": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Yes": {
+      "type": "string",
+      "enum": ["", "1"],
+      "description": "Curriculum flag - Yes"
+    },
+    "No": {
+      "type": "string",
+      "enum": ["", "1"],
+      "description": "Curriculum flag - No"
+    },
+    "Picture book": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Chapter book": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Graphic novel": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Non-fiction": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Anthology": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Poetry": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Scripts & plays": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Lesbian": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Gay": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Bisexual & Pansexual": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Trans & Nonbinary": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Queer+": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Small Town, Rural & Heartland": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Black, Caribbean, & African Diaspora": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Asian & Asian Diaspora": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Latino & Hispanic": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Native American & Indigenous": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Diverse ensemble": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Ability": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Coming out": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Religion & Spirituality": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Diverse family structure": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Relationships: Family": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Relationships: Love": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Relationships: Friends": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Relationships: Community": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Politics, Society, & Activism": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Classics": {
+      "type": "string",
+      "enum": ["", "1"]
+    },
+    "Synopsis": {
+      "type": "string",
+      "description": "Book description"
+    },
+    "Synopsis link": {
+      "type": "string",
+      "description": "URL to full synopsis"
+    },
+    "Awards": {
+      "type": "string",
+      "description": "Award information"
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Additional notes"
+    },
+    "Year Published": {
+      "oneOf": [
+        {"type": "string"},
+        {"type": "number"}
+      ],
+      "description": "Publication year"
+    }
+  },
+  "additionalProperties": false
+}
+

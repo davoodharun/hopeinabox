@@ -1,0 +1,29 @@
+# hopeinabox Development Guidelines
+
+Auto-generated from all feature plans. Last updated: 2025-11-13
+
+## Active Technologies
+
+- Node.js (ES modules - .mjs files, compatible with existing scripts directory) + CSV parsing library (e.g., csv-parse, papaparse, or built-in Node.js), fs (Node.js built-in) (001-csv-booklist-parser)
+
+## Project Structure
+
+```text
+src/
+tests/
+```
+
+## Commands
+
+# Add commands for Node.js (ES modules - .mjs files, compatible with existing scripts directory)
+
+## Code Style
+
+Node.js (ES modules - .mjs files, compatible with existing scripts directory): Follow standard conventions
+
+## Recent Changes
+
+- 001-csv-booklist-parser: Added Node.js (ES modules - .mjs files, compatible with existing scripts directory) + CSV parsing library (e.g., csv-parse, papaparse, or built-in Node.js), fs (Node.js built-in)
+
+<!-- MANUAL ADDITIONS START -->
+<!-- MANUAL ADDITIONS END -->
