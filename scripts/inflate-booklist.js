@@ -426,6 +426,7 @@ class PageDom {
         let mTitle = document.getElementsByClassName('m-title')[0];
         let mCover = document.getElementsByClassName('m-cover')[0];
         let mAuthor = document.getElementsByClassName('m-author')[0];
+        let mYearPublished = document.getElementsByClassName('m-year-published')[0];
         let mTagPane = document.getElementsByClassName('m-tags-pane')[0];
         let mSynopsisSource = document.getElementsByClassName('m-synopsis-source')[0];
         let mSynopsis = document.getElementsByClassName('m-synopsis')[0];
@@ -433,6 +434,7 @@ class PageDom {
         mTitle.innerText = title;
         mCover.src = `../assets/book-covers/${this.titleToKebab(title)}.jpg`;
         mAuthor.innerText = book['Author']
+        mYearPublished.innerText = book['Year Published'] || '';
         mSynopsisSource.href = book['Synopsis link'];
         mSynopsis.innerText = book['Synopsis'];
         if (book['Yes']) {

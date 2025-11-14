@@ -454,6 +454,10 @@ input[type='checkbox'] {
                 </div>
                 <div class="m-header title-font">Author</div>
                 <div class="m-author m-text"></div>
+                
+                <div class="m-header title-font">Year Published</div>
+                <div class="m-year-published m-text"></div>
+                
                 <div class="m-header title-font">Tags</div>
                 <div class="m-tags-pane">
                 </div>
