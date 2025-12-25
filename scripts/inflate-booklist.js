@@ -149,7 +149,7 @@ class PageDom {
         this.loadTimeoutMs = 5000;
         this.filterCategories = [
             'readingLevel', 'format', 'representation', 'themes',
-            'includedIn', 'curriculumAvailable'
+            'yearPublished', 'curriculumAvailable'
         ];
 
         this.filterCategories = {
@@ -194,9 +194,7 @@ class PageDom {
                 'Early high school',
                 'Late high school'
             ],
-            includedIn: [
-                'Elementary', 'Middle', 'High'
-            ],
+            yearPublished: [], // Will be populated dynamically from book data
             curriculumAvailable: [
                 'Yes', 'No'
             ]
@@ -270,9 +268,29 @@ class PageDom {
         this.table.books = JSON.parse(jsonText)['books'];
         this.table.applyTitleShorteningToBooks();
         this.table.sortBooksByLevelThenTitle();
+        this.populateYearFilters();
         this.inflateFilters();
         this.inflateGrid();
         this.attachUIHandlers();
+    }
+
+    populateYearFilters() {
+        // Extract unique years from all books, sorted descending
+        let years = new Set();
+        this.table.books.forEach((book) => {
+            let year = book['Year Published'];
+            if (year && year !== '') {
+                // Convert to string and normalize
+                let yearStr = String(year).trim();
+                if (yearStr) {
+                    years.add(yearStr);
+                }
+            }
+        });
+        // Convert to array and sort descending (newest first)
+        this.filterCategories.yearPublished = Array.from(years).sort((a, b) => {
+            return parseInt(b) - parseInt(a);
+        });
     }
 
     getFilteredBooks() {
@@ -286,8 +304,17 @@ class PageDom {
                     // OR over a category's filters if non-empty
                     let bookMatchesAtLeastOneCategoryFilter = false;
                     categoryFilters.forEach((checkedFilter) => {
-                        if (book[checkedFilter]) {
-                            bookMatchesAtLeastOneCategoryFilter = true;
+                        // Special handling for yearPublished category
+                        if (filterName === 'yearPublished') {
+                            let bookYear = String(book['Year Published'] || '').trim();
+                            if (bookYear === checkedFilter) {
+                                bookMatchesAtLeastOneCategoryFilter = true;
+                            }
+                        } else {
+                            // Standard boolean field check
+                            if (book[checkedFilter]) {
+                                bookMatchesAtLeastOneCategoryFilter = true;
+                            }
                         }
                     });
                     if (!bookMatchesAtLeastOneCategoryFilter) {
@@ -341,7 +368,7 @@ class PageDom {
                 labelDom.htmlFor = cbId;
                 quantityDom.classList.add('tag-text');
                 quantityDom.classList.add('light-text');
-                quantityDom.innerText = `(${this.countItemsWithFilter(filter)})`;
+                quantityDom.innerText = `(${this.countItemsWithFilter(category, filter)})`;
                 rowDom.appendChild(cbDom);
                 rowDom.appendChild(labelDom);
                 labelDom.appendChild(quantityDom);
@@ -361,7 +388,16 @@ class PageDom {
         mainTitle.style.setProperty('margin-bottom', '-12px');
     }
 
-    countItemsWithFilter(filterName) {
+    countItemsWithFilter(category, filterName) {
+        // Special handling for yearPublished category
+        if (category === 'yearPublished') {
+            let passFilterBooks = this.table.books.filter(book => {
+                let bookYear = String(book['Year Published'] || '').trim();
+                return bookYear === filterName;
+            });
+            return passFilterBooks.length;
+        }
+        // Standard boolean field check
         let passFilterBooks = this.table.books.filter(book => book[filterName]);
         return passFilterBooks.length;
     }

@@ -543,10 +543,10 @@ input[type='checkbox'] {
             </div>
             <div class="checkbox-pane hidden"></div>
         </div>
-        <div class="filter-category filters-included-in" data-toggled="false">
+        <div class="filter-category filters-year-published" data-toggled="false">
             <div class="filter-section-top">
                 <img class="collapse-icon" src="../assets/down-icon.svg" alt="Collapse menu icon">
-                <div class="filter-section-top-text">our book boxes</div>
+                <div class="filter-section-top-text">year published</div>
             </div>
             <div class="checkbox-pane hidden"></div>
         </div>
