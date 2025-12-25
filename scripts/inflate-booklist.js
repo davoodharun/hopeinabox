@@ -71,7 +71,16 @@ class BookTable {
             .concat(sortedBins['Middle school'])
             .concat(sortedBins['Late elementary'])
             .concat(sortedBins['Early elementary']);
-        this.books = finalList;
+        // Remove duplicates: if a book appears in multiple reading levels,
+        // it will appear multiple times. Deduplicate by RowNumber.
+        let seenRowNumbers = new Set();
+        this.books = finalList.filter((book) => {
+            if (seenRowNumbers.has(book['RowNumber'])) {
+                return false;
+            }
+            seenRowNumbers.add(book['RowNumber']);
+            return true;
+        });
     }
 
     applyTitleShorteningToBooks() {
@@ -674,6 +683,10 @@ class PageDom {
 }
 
 let main = () => {
+    // Prevent multiple initializations if Squarespace calls onInitialize multiple times
+    if (window.pageDom) {
+        return;
+    }
     window.pageDom = new PageDom();
 };
 
